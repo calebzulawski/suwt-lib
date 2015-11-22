@@ -1,12 +1,17 @@
 #include <boost/python.hpp>
 #include <suwt/usrp/usrp_config.h>
 #include <suwt/usrp/usrp.h>
+#include <suwt/python/numpy.h>
 
 using namespace boost::python;
 using namespace suwt;
 
+
+
 BOOST_PYTHON_MODULE(libsuwt)
 {
+	init_numpy();
+
 	enum_<sample_t>("sample_type")
 		.value("double", DOUBLE)
 		.value("float",  FLOAT)

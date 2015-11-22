@@ -5,6 +5,8 @@
 
 namespace suwt {
 
+void* init_numpy();
+
 boost::python::object vectorToNumpyArray(const std::vector<float> &v);
 	
 } // namespace suwt
