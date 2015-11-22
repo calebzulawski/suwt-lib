@@ -51,7 +51,7 @@ void usrp::receive(size_t numSamples) {
 }
 
 boost::python::object usrp::getSamples(size_t n) {
-    return vectorToNumpyArray(buffer.read(n));
+    return vectorToNumpyArray(buffer.read(static_cast<size_t>(n)));
 }
 
 } /* namespace suwt */

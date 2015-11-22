@@ -14,7 +14,6 @@ namespace suwt {
 
 class usrp {
 public:
-	usrp();
 	void setBufferSize(size_t n);
 	void make(std::string address);
 	bool configure(usrp_config &c);
