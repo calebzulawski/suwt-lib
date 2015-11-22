@@ -3,12 +3,22 @@
 
 #include <string>
 
-#include "types.h"
+#include <suwt/usrp/types.h>
 
 namespace suwt {
 	
 struct usrp_config {
-	usrp_config();
+	usrp_config() :
+		sample_type        (SHORT),
+		samples_per_buffer (10000),
+		sample_rate        (1e6),
+		center_freq        (0),
+		gain               (0),
+		antenna            (""),
+		frontend_bandwidth (0),
+		reference          ("internal"),
+		wire_format        (SC16)
+	{}
 
 	sample_t    sample_type;
 	size_t      samples_per_buffer;
@@ -19,20 +29,7 @@ struct usrp_config {
 	double      frontend_bandwidth;
 	std::string reference;
 	wire_fmt_t  wire_format;
-
 };
-
-usrp_config::usrp_config() :
-	sample_type        (SHORT),
-	samples_per_buffer (10000),
-	sample_rate        (1e6),
-	center_freq        (0),
-	gain               (0),
-	antenna            (""),
-	frontend_bandwidth (0),
-	reference          ("internal"),
-	wire_format        (SC16)
-{}
 
 } //namespace suwt
 
